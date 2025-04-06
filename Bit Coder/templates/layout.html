@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+    <title>Bit Coder</title>
+</head>
+<body>
+    <header>
+    <div class="nav_box">
+        <div class="nav_logo_box">
+            <div class="logo"></div>
+            <h1>BIT CODER</h1>
+        </div>
+        <div id="box2" class="nav_links">
+<a href="/"> <h1>HOME</h1></a>
+           <a href="/about"> <h1>ABOUT</h1></a>
+            <a href="/posts"><h1>POSTS</h1></a>
+           <a href="/contact"><h1>CONTACT</h1></a>
+        </div>
+<div id="box" >
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+</div>
+         </div>
+
+{% block body%}
+        {% endblock %}
+<footer>
+<p>&copy;Copyright  2025 Bit Coder. All rights reserved. <br> Develop by Shivam Kumar</p>
+</footer>
+<script src="{{url_for('static',filename='blogpost.js')}}">
+
+</script>
+</body>
+</html>

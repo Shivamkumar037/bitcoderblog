@@ -1,0 +1,319 @@
+{% extends "layout.html" %}
+{% block body%}
+<main>
+    <div class="side2">
+        <div id="post-lists">
+<!-- hear element aa -->
+        </div>
+    </div>
+<div class="post-nav">
+    <p id="post-lists-box">POSTS<</p>
+    <h1>POSTS</h1>
+</div>
+    <div id="all-page-content">
+        <!-- content hear add -->
+
+
+        <div class="content-of-page">
+            <h1 id="post1" class="main-post-heading">JSON (JavaScript Object Notation)</h1>
+            <p>JSON is a lightweight data-interchange format that stores data in key-value pairs. It is human-readable and easily parsable and processable by machines.</p>
+
+            <h2>How to Create a JSON File?</h2>
+            <p>A JSON file is created with the `.json` extension. Its content must follow a structured format using keys and values.</p>
+            <p>Example JSON File:</p>
+            <pre >
+                {
+                    "name": "John Doe",
+                    "age": 30,
+                    "isEmployed": true,
+                    "skills": ["JavaScript", "Python", "C++"],
+                    "address": {
+                        "city": "New York",
+                        "zip": "10001"
+                    }
+                }
+            </pre>
+
+            <h2>Why Use JSON?</h2>
+            <p>JSON is mainly used to store and exchange data. It is platform-independent and ideal for web applications.</p>
+            <p>Some reasons include:</p>
+            <ul>
+                <li>Lightweight and fast</li>
+                <li>Human-readable format</li>
+                <li>Cross-platform compatibility</li>
+                <li>Easy to parse and process</li>
+            </ul>
+
+            <h2>When to Use JSON?</h2>
+            <p>JSON is used in various scenarios:</p>
+            <ul>
+                <li>Web Development (data transfer between server and client)</li>
+                <li>Configuration Files (storing software settings)</li>
+                <li>APIs (as response and request format)</li>
+                <li>Data Storage (lightweight data storage)</li>
+            </ul>
+
+            <h2>Importing JSON</h2>
+            <p>To import a JSON file, different programming languages use predefined methods. For example:</p>
+            <h2>Python:</h2>
+            <p>Import and parse:</p>
+            <pre >
+                import json
+
+                with open('data.json') as file:
+                    data = json.load(file) # Converts JSON file to Python dictionary
+                    print(data['name']) # Output: John Doe
+            </pre>
+            <h2>JavaScript:</h2>
+            <p>Loading a JSON file with Fetch API:</p>
+            <pre>
+                fetch('data.json')
+                    .then(response => response.json())
+                    .then(data => console.log(data.name)); // Output: John Doe
+            </pre>
+
+            <h2>Managing JSON Data</h2>
+            <p>Managing JSON data is easy. We can read, update, and delete data using programming languages.</p>
+            <p>Example: Updating data in Python:</p>
+            <pre>
+                data['age'] = 31
+            </pre>
+
+            <h2>Accessing JSON Data</h2>
+            <p>JSON data can be accessed using keys. Example:</p>
+            <h2>JavaScript:</h2>
+            <pre>
+                console.log(data.name); // Output: John Doe
+            </pre>
+            <h2>Python:</h2>
+            <pre>
+                print(data['name']) # Output: John Doe
+            </pre>
+
+            <h2>Basic to Advanced JSON Concepts</h2>
+            <p>Basic:</p>
+            <ul>
+                <li>Key-Value Pair</li>
+                <li>Arrays and Objects</li>
+                <li>Null, Boolean, and Number types</li>
+            </ul>
+            <p>Advanced:</p>
+            <ul>
+                <li>Nested JSON Objects</li>
+                <li>Dynamic JSON generation</li>
+                <li>Streaming JSON data</li>
+                <li>Serialization and Deserialization</li>
+            </ul>
+
+            <h2>Conclusion</h2>
+            <p>JSON is a powerful format widely used in modern applications. It is ideal for exchanging data and lightweight storage. Various programming languages effectively utilize JSON.</p>
+
+        </div>
+        <div class="content-of-page">
+            <h1 id="post2" class="main-post-heading">Complete JavaScript DOM Manipulation Guide</h1>
+
+<h2>1. Selecting Elements in DOM</h2>
+
+<h3>a. Selecting Single Element</h3>
+<pre>
+// Select by ID
+const header = document.getElementById('header');
+
+// Select using CSS selector (first matching element)
+const item = document.querySelector('.item');
+</pre>
+
+<h3>b. Selecting Multiple Elements</h3>
+<pre>
+// By class name
+const items = document.getElementsByClassName('item');
+
+// By tag name
+const paragraphs = document.getElementsByTagName('p');
+
+// All matching elements using CSS selector
+const allItems = document.querySelectorAll('.item');
+</pre>
+
+<h2>2. Creating and Adding Elements</h2>
+
+<h3>a. Creating New Element</h3>
+<pre>
+const newDiv = document.createElement('div');
+newDiv.textContent = 'New Div';
+</pre>
+
+<h3>b. Ways to Add to DOM</h3>
+<pre>
+// Append at the end
+document.body.appendChild(newDiv);
+
+// Insert at specific position
+const container = document.getElementById('container');
+container.insertBefore(newDiv, container.firstChild);
+
+// Insert HTML inside element
+container.innerHTML = '&lt;p&gt;New paragraph&lt;/p&gt;';
+</pre>
+
+<h2>3. Modifying Elements</h2>
+
+<h3>a. Changing Content</h3>
+<pre>
+// Change text content
+const heading = document.querySelector('h1');
+heading.textContent = 'New Heading';
+
+// Change HTML content
+heading.innerHTML = 'New &lt;em&gt;Heading&lt;/em&gt;';
+</pre>
+
+<h3>b. Changing Attributes</h3>
+<pre>
+const link = document.querySelector('a');
+
+// Using setAttribute method
+link.setAttribute('href', 'https://newurl.com');
+
+// Direct property access
+link.href = 'https://newurl.com';
+</pre>
+
+<h3>c. Changing Styles</h3>
+<pre>
+const box = document.querySelector('.box');
+box.style.backgroundColor = 'blue';
+box.style.padding = '20px';
+</pre>
+
+<h3>d. Managing Classes</h3>
+<pre>
+// Add class
+box.classList.add('active');
+
+// Remove class
+box.classList.remove('inactive');
+
+// Toggle class
+box.classList.toggle('hidden');
+</pre>
+
+<h2>4. Deleting Elements</h2>
+<pre>
+const elementToRemove = document.querySelector('.old-element');
+
+// Modern way
+elementToRemove.remove();
+
+// Older way (for browser support)
+elementToRemove.parentNode.removeChild(elementToRemove);
+</pre>
+
+<h2>5. Adding Event Listeners</h2>
+<pre>
+const button = document.querySelector('button');
+
+button.addEventListener('click', function() {
+  console.log('Button clicked!');
+});
+</pre>
+
+<h2>6. Accessing Form Values</h2>
+<pre>
+const form = document.querySelector('form');
+const input = document.querySelector('input[type="text"]');
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+  console.log(input.value);
+});
+</pre>
+
+<h2>Practical Example - Todo List</h2>
+<pre>
+&lt;div id="app"&gt;
+  &lt;input type="text" id="taskInput" placeholder="New task"&gt;
+  &lt;button id="addBtn"&gt;Add&lt;/button&gt;
+  &lt;ul id="taskList"&gt;&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  const input = document.getElementById('taskInput');
+  const addBtn = document.getElementById('addBtn');
+  const list = document.getElementById('taskList');
+
+  addBtn.addEventListener('click', () => {
+    if (input.value.trim() === '') return;
+
+    const li = document.createElement('li');
+    li.textContent = input.value;
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'Delete';
+    deleteBtn.addEventListener('click', () => li.remove());
+
+    li.appendChild(deleteBtn);
+    list.appendChild(li);
+
+    input.value = '';
+    input.focus();
+  });
+&lt;/script&gt;
+</pre>
+
+<h2>Advanced DOM Manipulation Techniques</h2>
+
+<h3>1. Event Delegation</h3>
+<pre>
+document.getElementById('taskList').addEventListener('click', function(e) {
+  if(e.target.tagName === 'BUTTON') {
+    e.target.parentElement.remove();
+  }
+});
+</pre>
+
+<h3>2. Element Cloning</h3>
+<pre>
+const template = document.querySelector('.template');
+const newItem = template.cloneNode(true);
+newItem.style.display = 'block';
+document.body.appendChild(newItem);
+</pre>
+
+<h3>3. Using Dataset Attributes</h3>
+<pre>
+&lt;div data-user-id="123" data-role="admin"&gt;User Info&lt;/div&gt;
+
+&lt;script&gt;
+  const userDiv = document.querySelector('div');
+  console.log(userDiv.dataset.userId); // "123"
+  console.log(userDiv.dataset.role); // "admin"
+&lt;/script&gt;
+</pre>
+
+<h2>Performance Tips</h2>
+<ul>
+  <li><strong>Minimize DOM Access:</strong> Select elements once and store in variables</li>
+  <li><strong>Batch DOM Updates:</strong> Use DocumentFragment</li>
+  <li><strong>Event Delegation:</strong> Attach listeners to parent elements</li>
+</ul>
+
+<pre>
+// DocumentFragment example
+const fragment = document.createDocumentFragment();
+
+for(let i = 0; i &lt; 100; i++) {
+  const li = document.createElement('li');
+  li.textContent = `Item ${i}`;
+  fragment.appendChild(li);
+}
+
+document.getElementById('list').appendChild(fragment);
+</pre>
+
+<p>DOM manipulation is JavaScript's most powerful feature that enables you to dynamically modify web pages. These techniques will help you build interactive web applications.</p>
+        </div>
+
+       </div>
+   </main>
+{% endblock%}
