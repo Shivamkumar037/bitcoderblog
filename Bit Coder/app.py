@@ -1,8 +1,9 @@
-from flask import Flask, render_template
-import os 
+from flask import Flask, render_template, send_from_directory
+import os
 
 app = Flask(__name__)
 
+# Routes
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -19,5 +20,12 @@ def contact():
 def post():
     return render_template("posts.html")
 
+# Static files fix
+@app.route('/static/<path:path>')
+def serve_static(path):
+    return send_from_directory('static', path)
+
+# Railway deployment config
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host='0.0.0.0', port=port)
